@@ -1,0 +1,48 @@
+═══════════════════════════════════════════════════
+  POKKE — Cómo generar el proyecto completo
+═══════════════════════════════════════════════════
+
+REQUISITO:
+  - Tener el archivo SimpMusic-dev.zip en la misma carpeta
+    (el que me enviaste originalmente)
+
+PASOS (en tu PC / Linux / Mac / WSL):
+
+  1. Copia SimpMusic-dev.zip a esta carpeta PokkeSetup
+
+  2. Ejecuta:
+       bash setup_pokke.sh
+
+  3. Se creará la carpeta "Pokke" con:
+       • Código de SimpMusic (solo lo necesario)
+       • Renombrado a Pokke (package + nombre)
+       • Icono de la nota musical
+       • Pantallas de Perfil, Amigos y Chats
+       • Conexión a tu Kokoro Supabase
+
+  4. Entra a Pokke y clona el core:
+       cd Pokke
+       git clone --depth 1 https://github.com/maxrave-dev/core.git core
+
+  5. Abre en Android Studio y sincroniza Gradle
+
+  6. (Opcional) Ejecuta supabase_setup.sql en el
+     SQL Editor de tu proyecto Kokoro Supabase
+     para que los perfiles se creen solos al registrarse
+
+═══════════════════════════════════════════════════
+  Contenido de este pack
+═══════════════════════════════════════════════════
+
+  setup_pokke.sh       → Script principal (haz esto)
+  supabase_setup.sql   → Triggers y políticas RLS
+  data/                → Modelos + SocialRepository
+  viewmodel/           → Profile / Friends / Chat VMs
+  screens/             → Pantallas Compose
+  icon/                → Icono en todas las densidades
+  INTEGRACION.md       → Detalles técnicos
+  RENAME_TO_POKKE.sh   → Solo renombrado (si lo necesitas aparte)
+
+Backend ya configurado:
+  URL:  https://ajbmpgnzkgtcmulocftd.supabase.co
+  Tablas: profiles, profile_follows, conversations, messages
